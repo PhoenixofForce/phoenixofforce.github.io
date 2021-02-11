@@ -1,0 +1,36 @@
+@import "chota.css";
+
+:root {
+	--bg-color: #222222;
+	--bg-secondary-color: #333333;
+	--color-primary: #44edff;
+	--color-secondary: #1b4d87;
+	--color-lightSecondary: #3085c2;
+	--color-lightGrey: #747681;
+	--color-grey: #d2d6dd;
+	--color-darkGrey: #FAFAFA;
+	--color-error: #d43939;
+	--color-success: #28bd14;
+	--grid-maxWidth: 120rem;
+	--grid-gutter: 2rem;
+	--font-size: 1.6rem;
+	--font-color: #FAFAFA;
+	--font-family-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+	--font-family-mono: monaco, "Consolas", "Lucida Console", monospace;
+}
+
+html, body {
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
+
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+}
