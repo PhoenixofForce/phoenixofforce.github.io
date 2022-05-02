@@ -8,9 +8,12 @@
   import DnDUtils from '../sidebar/DnDUtils.svelte';
   import DungeonCreator from '../sidebar/DungeonCreator.svelte';
   import DungeonViewer from '../sidebar/DungeonViewer.svelte';
+  import Engine from '../sidebar/Engine.svelte';
   import HexGame from '../sidebar/HexGame.svelte';
   import JNR from '../sidebar/JNR.svelte';
   import LaTxT from '../sidebar/LaTxT.svelte';
+  import LD48 from '../sidebar/LD48.svelte';
+  import LD50 from '../sidebar/LD50.svelte';
   import LevelEditor from '../sidebar/LevelEditor.svelte';
   import LightsOut from '../sidebar/LightsOut.svelte';
   import MyLamp from '../sidebar/MyLamp.svelte';
@@ -20,6 +23,27 @@
   import ZeroGame from '../sidebar/ZeroGame.svelte';
 
   let projects = [
+
+    //02.04.2022
+    { title: "Dont Sleep", text: "A point and click game made in 48h with the current state of my engine",
+      tags: ["Java", "Game", "GameJam"], image: "DontSleep_Cover", year: "LD50", mod: LD50
+    },
+
+    //08.03.2022
+    { title: "LWJGL Engine", text: "A work in progress game codebase.",
+      tags: ["Java", "Game"], image: "engine", year: "2022", mod: Engine
+    },
+
+
+    //31.10.2021
+    { title: "0 Hour Game", text: "Turns out 2021 wasnt the last. So i made a game in 0 hours again.",
+      tags: ["Java", "GameJam", "Game"], image: "zero_game_2", year: "0h Jam 2021", mod: DnDUtils
+    },
+
+    //24.04.21
+    { title: "Chrono Jump", text: "A very short game for the 48 LD, which plays with the time",
+      tags: ["Java", "Game", "GameJam"], image: "ld48", year: "LD48", mod: LD48
+    },
 
     //19.01.2021
     { title: "DnD Utils", text: "Want to roll some digital dice? Compare Spell damage? Then this site is for you.",
