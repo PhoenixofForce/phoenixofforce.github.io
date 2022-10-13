@@ -9,8 +9,8 @@
 	</div>
 
 	<div class="nav-right">
-		<ImageLink link="https://twitter.com/PhoenixofForce" imgLink="https://icongr.am/simple/twitter.svg?size=20" />
-		<ImageLink link="https://github.com/PhoenixofForce/" imgLink="https://icongr.am/simple/github.svg?size=20" />
+		<ImageLink link="https://twitter.com/PhoenixofForce" imgLink="https://icongr.am/simple/twitter.svg?size=20" title="Twitter" />
+		<ImageLink link="https://github.com/PhoenixofForce/" imgLink="https://icongr.am/simple/github.svg?size=20" title="Github" />
 	</div >
 </nav>
 

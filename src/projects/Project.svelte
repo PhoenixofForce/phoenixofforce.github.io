@@ -1,6 +1,5 @@
 <script>
-  import { createEventDispatcher } from 'svelte';
-	const dispatch = createEventDispatcher();
+  import ImageIcon from '../components/ImageLink.svelte';
 
   let width = 315;
   let height = 250;
@@ -11,16 +10,12 @@
   export let image;
   export let tags = [];
   export let link = "";
-  export let mod;
+  export let links = [];
 
-  function clickLink(e) {
-    console.log(e.button);
-    if(!link && mod) {
-      dispatch('sidebar', {
-  			title: title
-  		});
-    }
+  if(link.length == 0 && links.length > 0) {
+    link = links[0].link;
   }
+
 </script>
 
 <div id={title} style="width:{width}px">
@@ -31,7 +26,7 @@
   </div>
 
   <div class="title">
-    <a href={ link? link: "javascript:void(0);" } on:click={ clickLink }> <b> { title } </b> </a>
+    <a href={ link? link: "javascript:void(0);" }> <b> { title } </b> </a>
     {#if year}
       <span class="year"> { year } </span>
     {/if}
@@ -40,9 +35,16 @@
   <div class="textholder">
     {text}
   </div>
+  
   <div>
     {#each tags.sort() as tag}
       <span class="tag is-small"> { tag } </span>
+    {/each}
+  </div>
+
+  <div>
+    {#each links as link} 
+      <ImageIcon link={link.link} imgLink={"https://icongr.am/" + link.icon + ".svg?size=20"} title={link.alt} />
     {/each}
   </div>
 </div>

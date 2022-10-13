@@ -4,7 +4,8 @@
   export let link;
   export let imgLink;
 
-  export let title ="";
+  export let title = "";
+  export let showTitle = false;
 
   let curColor = "FAFAFA";
   function hover() {
@@ -16,9 +17,9 @@
   }
 </script>
 
-<a href={ link } class="button icon-only clear hide-pr image-link" on:mouseover={ hover } on:mouseout={ deHover }>
-  <img src={ imgLink + "&color=" + curColor }>
-  {#if title}
+<a href={ link } class="button icon-only clear hide-pr image-link" title={ title } on:mouseover={ hover } on:mouseout={ deHover }>
+  <img src={ imgLink + "&color=" + curColor } alt={"link to " + link}>
+  {#if showTitle}
     <span style="color: #{ curColor };"> { title } </span>
   {/if}
 </a>
