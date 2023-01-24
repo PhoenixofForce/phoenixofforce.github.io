@@ -1,20 +1,24 @@
 @import "chota.css";
 
 :root {
-	--bg-color: #222222;
-	--bg-secondary-color: #333333;
-	--color-primary: #44edff;
+	--color-primary: #44d3ff;
 	--color-secondary: #1b4d87;
-	--color-lightSecondary: #3085c2;
+
+	--bg-color: #222228;
+	--bg-secondary-color: #333339;
+
 	--color-lightGrey: #747681;
 	--color-grey: #d2d6dd;
 	--color-darkGrey: #FAFAFA;
+
 	--color-error: #d43939;
 	--color-success: #28bd14;
+
 	--grid-maxWidth: 120rem;
 	--grid-gutter: 2rem;
+	
 	--font-size: 1.6rem;
-	--font-color: #FAFAFA;
+	--font-color: #F4F4FF;
 	--font-family-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
 	--font-family-mono: monaco, "Consolas", "Lucida Console", monospace;
 }
@@ -23,6 +27,7 @@ html, body {
 	position: relative;
 	width: 100%;
 	height: 100%;
+	overflow-x: hidden
 }
 
 .noselect {
