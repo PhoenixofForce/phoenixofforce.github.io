@@ -1,6 +1,4 @@
 <script>
-	import { onMount } from 'svelte';
-
   export let link;
   export let imgLink;
 
@@ -17,8 +15,14 @@
   }
 </script>
 
-<a href={ link } class="button icon-only clear hide-pr image-link" title={ title } on:mouseover={ hover } on:mouseout={ deHover }>
-  <img src={ imgLink + "&color=" + curColor } alt={"link to " + link}>
+<a href={ link }
+  class="button icon-only clear hide-pr image-link"
+  title={ title } 
+  on:mouseover={ hover } 
+  on:mouseout={ deHover }
+>
+  
+ <img src={ imgLink + "&color=" + curColor } alt={"link to " + link}>
   {#if showTitle}
     <span style="color: #{ curColor };"> { title } </span>
   {/if}

@@ -1,8 +1,4 @@
-<script>
-  import Project from './Project.svelte';
-  import MultiSelect from '../components/MultiSelect.svelte';
-
-  let projects = [
+export let projects = [
 
     //01.10.2022
     { title: "Speed Barber", text: "You play as the SpeedBarber who chose the busy travellers of the subway as his customers. Because they are so busy, you have to finish their requests in 10 seconds or less.",
@@ -119,7 +115,7 @@
     },
 
     //20.12.20
-    { title: "Dungeon Viewer", text: "Host a game, share the link and watch your player struggle as you throw some dragons at them!",
+    { title: "Dungeon Viewer", text: "Host a game, share the link and watch your player struggle as you throw some dragons at them! This project no longer works as the host service I used discontinued its free plan. ",
       tags: ["DND", "Svelte", "Web", "Tool"], image: "dungeon_viewer_1", year: 2020,
       links: [
         {
@@ -307,50 +303,3 @@
       ],
     },
   ]
-
-  let tags = projects.map(e => e.tags);
-  tags = [].concat.apply([], tags);
-  tags = tags.filter(onlyUnique).sort();
-
-  let selectedTags = []
-
-  function onlyUnique(value, index, self) {
-    return self.indexOf(value) === index;
-  }
-</script>
-
-<div>
-  <div class="filter hide-pr">
-    <MultiSelect placeholder="Filter" bind:value={ selectedTags }>
-      {#each tags as tag}
-        <option value={tag}> { tag } </option>
-      {/each}
-    </MultiSelect>
-  </div>
-
-  <div class="flex">
-    {#each projects as project}
-      {#if selectedTags == 0 || project.tags.some(e => selectedTags.includes(e))}
-        <div class="project-holder"> <Project { ...project } /> </div>
-      {/if}
-    {/each}
-  </div>
-</div>
-
-<style>
-  .flex {
-    display: flex;
-		align-items: start;
-		flex-wrap: wrap;
-		justify-content: space-evenly;
-  }
-
-  .project-holder {
-    margin-left: 32px;
-    margin-bottom: 32px;
-  }
-
-  .filter {
-    margin-bottom: 32px;
-  }
-</style>

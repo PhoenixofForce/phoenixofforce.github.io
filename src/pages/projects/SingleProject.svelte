@@ -1,8 +1,9 @@
 <script>
-  import ImageIcon from '../components/ImageLink.svelte';
+  import ImageIcon from '../../components/ImageLink.svelte';
 
   let width = 315;
   let height = 250;
+  let mouseEntered = false;
 
   export let title = "Working Title";
   export let text = "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam n";
@@ -15,15 +16,31 @@
   if(link.length == 0 && links.length > 0) {
     link = links[0].link;
   }
-
 </script>
 
 <div id={title} style="width:{width}px">
-  <div class="image-display" style="width:{width}px; height:{height}px; overflow: hidden;">
-    {#if image}
-        <img src={"./images/" + image + ".png"} style="display: block; max-width: {width}px; max-height: {height}px; width: auto; height: auto;" alt="Screenshot" >
+
+  <!-- 
+    The Image of the project as a link
+    The Color of the border changes as the mouse enters/ leaves the image
+  
+  -->
+  <a href={ link }>
+    <div 
+      class="image-display" class:no-image="{!image}"
+      style="width:{width}px; height:{height}px; 
+      overflow: hidden;
+      --border-color: { mouseEntered? "var(--color-primary)": "var(--bg-secondary-color)" }
+      "
+      on:mouseenter={ e => mouseEntered = true }
+      on:mouseleave={ e=> mouseEntered = false }
+    >
+      
+      {#if image}
+          <img src={"./images/" + image + ".png"} style="display: block; max-width: {width}px; max-height: {height}px; width: auto; height: auto;" alt="Screenshot" >
       {/if}
-  </div>
+    </div>
+  </a>
 
   <div class="title">
     <a href={ link? link: "javascript:void(0);" }> <b> { title } </b> </a>
@@ -33,7 +50,7 @@
   </div>
 
   <div class="textholder">
-    {text}
+    { text }
   </div>
   
   <div>
@@ -74,8 +91,13 @@
     justify-content: center;
   }
 
+  .no-image {
+    border-radius: 20px;
+    border: 4px solid var(--border-color);
+  }
+
   .image-display img {
     border-radius: 20px;
-    border: 4px solid var(--bg-secondary-color);
+    border: 4px solid var(--border-color);
   }
 </style>
