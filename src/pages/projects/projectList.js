@@ -131,6 +131,18 @@ export let projects = [
       ],
     },
 
+    //06.11.20
+    { title: "Entity Component System", text: "This is a test of an entity component system (ecs) featuring abilities, a moving platform, an enemy and a dash.",
+      tags: ["Java", "Mechanic", "Game"], image: "ecs", year: 2020,
+      links: [
+        {
+          link: "https://github.com/PhoenixofForce/ECS_Test",
+          icon: "material/github",
+          alt: "Source Code"
+        }
+      ],
+    },
+
     //25.10.20
     { title: "0 Hour Game", text: "A Game made in 0 Hours, -40 Minutes. This game jam was (supposed to be) the last of its kind. Play my version of Space Invaders",
       tags: ["Java", "GameJam", "Game"], image: "zero_game", year: "0h Jam 2020",
@@ -189,6 +201,42 @@ export let projects = [
       ],
     },
 
+    //16.02.2019
+    { title: "Dialogue System", text: "Dialogue System in the command line that uses tags, which are established in other projects of mine.",
+      tags: ["Mechanic", "Java"], image: "", year: "2019",
+      links: [
+        {
+          link: "https://github.com/PhoenixofForce/DialogueSystem",
+          icon: "material/github",
+          alt: "Source Code"
+        }
+      ],
+    },
+
+    //13.10.2018
+    { title: "RayCast Scene", text: "This raycast scene renders 3D Prisms (objects with flat top and bottom) by sending rays from the player position in all directions.",
+      tags: ["Mechanic", "Java"], image: "raycast", year: "2018",
+      links: [
+        {
+          link: "https://github.com/PhoenixofForce/RayCast-Scene",
+          icon: "material/github",
+          alt: "Source Code"
+        }
+      ],
+    },
+
+    //23.08.2018
+    { title: "Triangulated Polygon Collision", text: "You can create polygons that get translated into a group of triangles. These triangles are used for collision testing with the Separating Axis Theorem.",
+      tags: ["Mechanic", "Java"], image: "axis", year: "2018",
+      links: [
+        {
+          link: "https://github.com/PhoenixofForce/TriangulatedPolygonCollision",
+          icon: "material/github",
+          alt: "Source Code"
+        }
+      ],
+    },
+
     //22.04.2018
     { title: "Clicker Defense", text: "Protect your Base from very unfriendly Slimes. Get resources to build powerful Towers.",
       tags: ["GameJam", "Game", "Java"], image: "clicker_defense", year: "LD41",
@@ -208,7 +256,7 @@ export let projects = [
 
     //16.12.17
     { title: "Texture Packer", text: "A texture packer based on steering algorithms.",
-      tags: ["Java", "Tool"], image: "texture_packer",
+      tags: ["Java", "Tool"], image: "texture_packer", year: 2017,
       links: [
         {
           link: "https://github.com/PhoenixofForce/TexturePacker",
@@ -220,7 +268,7 @@ export let projects = [
 
     //05.12.17
     { title: "LevelEditor", text: "Import your spritesheet and start making levels for your game.",
-      tags: ["Java", "Tool"], image: "level_editor",
+      tags: ["Java", "Tool"], image: "level_editor", year: 2017,
       links: [
         {
           link: "https://github.com/PhoenixofForce/Level_Editor",
@@ -229,8 +277,9 @@ export let projects = [
         }
       ],
     },
+
     { title: "Jump and Run", text: "Jump your way through multiple levels to collect all shiny coins.",
-      tags: ["Game", "Java"], image: "jump_and_run",
+      tags: ["Game", "Java"], image: "jump_and_run", year: 2017,
       links: [
         {
           link: "https://github.com/Nottrex/JumpAndRun",
@@ -293,7 +342,7 @@ export let projects = [
 
     //22.03.17
     { title: "Hex Game", text: "Blast of your enemies in this turn based stategy game.",
-      tags: ["Game", "Java"], image: "hexgame_",
+      tags: ["Game", "Java"], image: "hexgame_", year: 2017,
       links: [
         {
           link: "https://github.com/Nottrex/HexGame_",
