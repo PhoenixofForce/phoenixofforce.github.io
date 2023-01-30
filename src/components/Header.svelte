@@ -1,4 +1,5 @@
 <script>
+    export let activeLink = 0;
     let mouseX = 250;
 </script>
 
@@ -11,8 +12,8 @@
           </div>
       
           <div class="nav-right">        
-                <a href="/" class="active"> About </a>
-                <a href="projects"> Projects </a>
+                <a href="/" class:active={ activeLink == 0 }> About </a>
+                <a href="projects" class:active={ activeLink == 1 } > Projects </a>
           </div >
       </nav>
 </div>

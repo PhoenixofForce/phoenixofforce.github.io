@@ -3,20 +3,19 @@
   import { flip } from 'svelte/animate';
 
   import Project from './SingleProject.svelte';
-  import { projects } from './projectList';
 
   export let projectCountToDisplay = 0;
   export let selectedTags = []
 
-  for(let i = 0; i < projects.length; i++) projects[i].id = i;
+  for(let i = 0; i < allMyProjects.length; i++) allMyProjects[i].id = i;
 
-  if(projectCountToDisplay == 0) projectCountToDisplay = projects.length;
+  if(projectCountToDisplay == 0) projectCountToDisplay = allMyProjects.length;
   let shownProjects = [];
   filter();
 
-  $: { selectedTags; console.log("test"); filter(); }
+  $: { selectedTags; filter(); }
   function filter() {
-    shownProjects = projects.slice(0, projectCountToDisplay);
+    shownProjects = allMyProjects.slice(0, projectCountToDisplay);
     shownProjects = shownProjects.filter(project => selectedTags == 0 || project.tags.some(e => selectedTags.includes(e)));
   }
 </script>

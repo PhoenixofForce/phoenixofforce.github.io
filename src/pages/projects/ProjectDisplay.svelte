@@ -1,9 +1,8 @@
 <script>
   import ProjectGroup from './ProjectGroup.svelte';
   import Filter from '../../components/CheckBoxFilter.svelte';
-  import { projects } from './projectList';
 
-  let allTags = projects.map(e => e.tags);
+  let allTags = allMyProjects.map(e => e.tags);
   allTags = [].concat.apply([], allTags);
 
   let selectedTags = []

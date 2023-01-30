@@ -4,12 +4,13 @@
 	import FrontPage from './pages/frontpage/FrontPage.svelte';
 	import ProjectDisplay from './pages/projects/ProjectDisplay.svelte';
 
-	let pageToDisplay = FrontPage;
+	let pages = [ FrontPage, ProjectDisplay ];
+	let pageToDisplay = 0;
 </script>
 
-<Header />
+<Header activeLink={pageToDisplay} />
 <div class="main">
-	<svelte:component this={ pageToDisplay } />
+	<svelte:component this={ pages[pageToDisplay] } />
 </div>
 
 <style>
