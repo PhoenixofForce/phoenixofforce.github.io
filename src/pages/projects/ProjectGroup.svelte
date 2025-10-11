@@ -32,7 +32,7 @@
 <style>
   .flex {
     display: flex;
-		align-items: start;
+		align-items: stretch;
 		flex-wrap: wrap;
 		justify-content: space-evenly;
   }
@@ -40,5 +40,6 @@
   .project-holder {
     margin-left: 32px;
     margin-bottom: 32px;
+    display: flex;
   }
 </style>

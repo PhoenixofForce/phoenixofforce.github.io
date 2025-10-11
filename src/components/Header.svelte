@@ -4,18 +4,21 @@
 </script>
 
 <!-- Tracking mouse position for gradient position -->
-<div class="header" style="--x: { mouseX + "px" }" on:mousemove={ m => mouseX = m.x }> 
-
+<div
+    class="header"
+    style="--x: {mouseX + 'px'}"
+    on:mousemove={(m) => (mouseX = m.x)}
+>
     <nav class="nav">
         <div class="nav-left">
-          <a class="brand noselect" href="/"> PhoenixofForce </a>
-          </div>
-      
-          <div class="nav-right">        
-                <a href="/" class:active={ activeLink == 0 }> About </a>
-                <a href="projects" class:active={ activeLink == 1 } > Projects </a>
-          </div >
-      </nav>
+            <a class="brand noselect" href="/"> PhoenixofForce </a>
+        </div>
+
+        <div class="nav-right">
+            <a href="/" class:active={activeLink == 0}> About </a>
+            <a href="projects" class:active={activeLink == 1}> Projects </a>
+        </div>
+    </nav>
 </div>
 
 <style>
@@ -26,17 +29,18 @@
         border-bottom: 3px;
         border-style: solid;
         border-image: linear-gradient(
-                to right, 
+                to right,
                 var(--bg-color),
-                var(--color-secondary), 
-                var(--color-primary), var(--x),
+                var(--color-secondary),
+                var(--color-primary),
+                var(--x),
                 var(--color-secondary),
                 var(--bg-color)
-            ) 1;
+            )
+            1;
     }
-
-	.nav {
-		background: var(--bg-secondary-color);
+    .nav {
+        background: var(--bg-secondary-color);
     }
 
     @media screen and (min-width: 481px) {
@@ -47,11 +51,11 @@
 
     @media screen and (max-width: 480px) {
         nav {
-            height: 120px;;
+            height: 120px;
         }
     }
 
-	.nav-right {
-		margin-right: 24px;
-	}
+    .nav-right {
+        margin-right: 24px;
+    }
 </style>
