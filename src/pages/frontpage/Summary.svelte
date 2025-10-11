@@ -39,6 +39,7 @@
         width: 100px;
         border-radius: 50%;
         background-color: var(--bg-color);
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
     }
 
     .bio-section {

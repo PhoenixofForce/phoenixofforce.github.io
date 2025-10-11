@@ -60,17 +60,16 @@
 
 <style>
   .project {
-    background: linear-gradient(
-      329deg,
-      var(--bg-color) 20%,
-      var(--color-secondary) 200%
-    );
+    background: var(--bg-color);
     box-shadow: 5px 5px 22px -8px #070707;
     border-radius: 20px;
     height: 100%;
     margin-bottom: 0px;
     display: flex;
     flex-direction: column;
+    transition:
+      transform 0.2s,
+      box-shadow 0.2s;
   }
 
   .project:hover {

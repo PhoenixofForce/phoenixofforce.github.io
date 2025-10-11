@@ -42,9 +42,11 @@
   .image-link {
     padding: 2px;
     margin: 0px;
+    transition: transform 0.2s;
   }
 
   .image-link:hover {
+    opacity: 1;
     transform: scale(1.15);
   }
 </style>

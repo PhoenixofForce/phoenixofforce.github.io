@@ -16,6 +16,11 @@
         <TechStack />
     </div>
 </div>
+<div class="main contact-section">
+    <a href="mailto:contact@phoenixofforce.dev" class="contact-button">
+        Contact Me
+    </a>
+</div>
 
 <div class="newest-projects">
     <h1 class="is-center">MY LATEST PROJECTS</h1>
@@ -32,7 +37,7 @@
 
     .content-holder {
         background-color: var(--color-secondary);
-        margin-bottom: 48px;
+        margin-bottom: 24px;
     }
 
     .content-holder .main {
@@ -43,9 +48,30 @@
         gap: 16px;
     }
 
-    h2 {
-        margin-top: 12px;
-        margin-bottom: 32px;
+    .contact-section {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        padding-bottom: 20px;
+    }
+
+    .contact-button {
+        background-color: var(--color-primary);
+        color: var(--bg-color);
+        padding: 12px 32px;
+        border-radius: 8px;
+        font-weight: 600;
+        font-size: 1.1rem;
+        transition:
+            transform 0.2s,
+            box-shadow 0.2s;
+        letter-spacing: 0.05em;
+    }
+
+    .contact-button:hover {
+        opacity: 1;
+        transform: scale(1.15);
+        box-shadow: 0 4px 12px rgba(68, 211, 255, 0.3);
     }
 
     @media screen and (max-width: 750px) {
