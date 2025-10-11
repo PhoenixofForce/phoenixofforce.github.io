@@ -1,32 +1,33 @@
 <div class="tech-stack">
     <h3>Tech Stack</h3>
     <div class="tech-category">
-        <h4>Languages</h4>
+        <h4>Backend</h4>
         <div class="tech-tags">
             <span class="tag is-small">Java</span>
-            <span class="tag is-small">TypeScript</span>
-            <span class="tag is-small">JavaScript</span>
-            <span class="tag is-small">C++</span>
-            <span class="tag is-small">HTML/CSS</span>
+            <span class="tag is-small">Spring</span>
+            <span class="tag is-small">Node.js</span>
+            <span class="tag is-small">Maven</span>
         </div>
     </div>
     <div class="tech-category">
-        <h4>Web</h4>
+        <h4>Frontend</h4>
         <div class="tech-tags">
+            <span class="tag is-small">HTML/CSS</span>
             <span class="tag is-small">Svelte</span>
-            <span class="tag is-small">Spring</span>
             <span class="tag is-small">Angular</span>
-            <span class="tag is-small">Node.js</span>
+            <span class="tag is-small">TypeScript</span>
+            <span class="tag is-small">JavaScript</span>
+            <span class="tag is-small">SQL</span>
         </div>
     </div>
     <div class="tech-category">
         <h4>Game Dev</h4>
         <div class="tech-tags">
+            <span class="tag is-small">C++</span>
             <span class="tag is-small">OpenGL</span>
             <span class="tag is-small">LWJGL</span>
             <span class="tag is-small">RayLib</span>
             <span class="tag is-small">SDL2</span>
-            <span class="tag is-small">Minecraft</span>
         </div>
     </div>
     <div class="tech-category">
@@ -34,6 +35,7 @@
         <div class="tech-tags">
             <span class="tag is-small">Git</span>
             <span class="tag is-small">Docker</span>
+            <span class="tag is-small">Postman</span>
         </div>
     </div>
 </div>
