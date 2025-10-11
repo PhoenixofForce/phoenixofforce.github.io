@@ -7,6 +7,7 @@
             <span class="tag is-small">Spring</span>
             <span class="tag is-small">Node.js</span>
             <span class="tag is-small">Maven</span>
+            <span class="tag is-small">SQL</span>
         </div>
     </div>
     <div class="tech-category">
@@ -17,17 +18,16 @@
             <span class="tag is-small">Angular</span>
             <span class="tag is-small">TypeScript</span>
             <span class="tag is-small">JavaScript</span>
-            <span class="tag is-small">SQL</span>
         </div>
     </div>
     <div class="tech-category">
         <h4>Game Dev</h4>
         <div class="tech-tags">
-            <span class="tag is-small">C++</span>
             <span class="tag is-small">OpenGL</span>
             <span class="tag is-small">LWJGL</span>
             <span class="tag is-small">RayLib</span>
             <span class="tag is-small">SDL2</span>
+            <span class="tag is-small">C++</span>
         </div>
     </div>
     <div class="tech-category">
