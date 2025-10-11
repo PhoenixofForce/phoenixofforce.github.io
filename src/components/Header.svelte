@@ -22,11 +22,18 @@
 </div>
 
 <style>
+    .brand {
+        background: linear-gradient(135deg, var(--color-primary), white);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
     .header {
         width: 100%;
         margin-bottom: 32px;
         border-width: 0px;
-        border-bottom: 3px;
+        border-bottom: 1px;
         border-style: solid;
         border-image: linear-gradient(
                 to right,
@@ -38,6 +45,7 @@
                 var(--bg-color)
             )
             1;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
     }
     .nav {
         background: var(--bg-secondary-color);

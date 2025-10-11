@@ -2,7 +2,7 @@ let allMyProjects = [
   //05.03.2024
   {
     title: "StoryGame", text: "Web application for collaborative story writing where each user continues the story, but can only see the last sentence written by the previous contributor.",
-    tags: ["Game", "Svelte", "Tailwind", "Java", "Spring", "Docker"], image: "", year: "2024",
+    tags: ["Game", "Svelte", "Tailwind", "Java", "Spring", "Docker"], image: "storygame", year: "2024",
     links: [
       {
         link: "https://phoenixofforce.dev/StoryGame/",

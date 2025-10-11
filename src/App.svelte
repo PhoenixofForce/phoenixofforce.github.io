@@ -9,14 +9,9 @@
 </script>
 
 <Header activeLink={pageToDisplay} />
-<div class="main">
+<div>
 	<svelte:component this={pages[pageToDisplay]} />
 </div>
 
 <style>
-	.main {
-		width: 90vw;
-		margin-left: auto;
-		margin-right: auto;
-	}
 </style>

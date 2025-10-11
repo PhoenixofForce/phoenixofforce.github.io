@@ -18,46 +18,44 @@
 </script>
 
 <div id={title} class="project" style="width:{width}px">
-  <a href={link}>
-    <div class="image-display" class:no-image={!image}>
-      {#if image}
-        <img src={"./images/" + image + ".png"} alt="Screenshot" />
+  <div class="image-display" class:no-image={!image}>
+    {#if image}
+      <img src={"./images/" + image + ".png"} alt="Screenshot" />
+    {/if}
+  </div>
+
+  <div class="content">
+    <div class="title">
+      <b> {title} </b>
+      {#if year}
+        <span class="year"> {year} </span>
       {/if}
     </div>
 
-    <div class="content">
-      <div class="title">
-        <b> {title} </b>
-        {#if year}
-          <span class="year"> {year} </span>
-        {/if}
-      </div>
+    <div class="textholder">
+      {text}
+    </div>
 
-      <div class="textholder">
-        {text}
-      </div>
+    <div>
+      {#each links as link}
+        <ImageIcon
+          link={link.link}
+          imgLink={"https://icongr.am/" + link.icon + ".svg?size=24"}
+          title={link.alt}
+        />
+      {/each}
+    </div>
 
-      <div>
-        {#each links as link}
-          <ImageIcon
-            link={link.link}
-            imgLink={"https://icongr.am/" + link.icon + ".svg?size=24"}
-            title={link.alt}
-          />
+    <div class="bottom">
+      <hr />
+
+      <div class="tags">
+        {#each tags.sort() as tag}
+          <span class="tag is-small"> {tag} </span>
         {/each}
       </div>
-
-      <div class="bottom">
-        <hr />
-
-        <div class="tags">
-          {#each tags.sort() as tag}
-            <span class="tag is-small"> {tag} </span>
-          {/each}
-        </div>
-      </div>
     </div>
-  </a>
+  </div>
 </div>
 
 <style>
@@ -70,6 +68,9 @@
     box-shadow: 5px 5px 22px -8px #070707;
     border-radius: 20px;
     height: 100%;
+    margin-bottom: 0px;
+    display: flex;
+    flex-direction: column;
   }
 
   .project:hover {
@@ -100,6 +101,7 @@
 
   .tags .tag {
     margin-left: 0;
+    background-color: var(--bg-secondary-color);
   }
 
   .textholder {
@@ -116,13 +118,6 @@
 
   b {
     font-size: calc(var(--font-size) * 1.5);
-  }
-
-  a {
-    margin-bottom: 0px;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
   }
 
   .image-display {
