@@ -37,12 +37,12 @@
 
     .content-holder {
         background-color: var(--color-secondary);
-        margin-bottom: 24px;
+        margin-bottom: 32px;
     }
 
     .content-holder .main {
         padding-top: 20px;
-        padding-bottom: 20px;
+        padding-bottom: 32px;
         display: flex;
         justify-content: space-evenly;
         gap: 16px;
@@ -82,6 +82,14 @@
         .main {
             flex-direction: column;
             align-items: center;
+        }
+
+        .content-holder {
+            background: linear-gradient(
+                180deg,
+                transparent 85px,
+                var(--color-secondary) 85px
+            );
         }
     }
 </style>
