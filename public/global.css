@@ -30,9 +30,12 @@ body {
 	overflow-x: hidden
 }
 
+html {
+	background-color: var(--bg-color);
+}
+
 body {
 	background: linear-gradient(329deg, var(--bg-color) 20%, var(--color-secondary) 150%);
-	background-attachment: fixed;
 }
 
 .tag {
