@@ -8,7 +8,7 @@ interface Props {
   activeLink?: number;
 }
 
-const { title = "Ole | Developer Portfolio", activeLink = 0 } = Astro.props;
+const { title = "Ole | Software Developer", activeLink = 0 } = Astro.props;
 ---
 
 <!doctype html>
@@ -16,7 +16,7 @@ const { title = "Ole | Developer Portfolio", activeLink = 0 } = Astro.props;
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
   </head>
@@ -35,10 +35,18 @@ const { title = "Ole | Developer Portfolio", activeLink = 0 } = Astro.props;
   }
 
   body {
-    background: linear-gradient(329deg, var(--color-base-100) 20%, var(--color-secondary) 150%);
+    background: linear-gradient(
+      329deg,
+      var(--color-base-100) 20%,
+      var(--color-secondary) 150%
+    );
   }
 
   :global([data-theme="phoenix-light"]) body {
-    background: linear-gradient(149deg, var(--color-base-100) 20%, var(--color-secondary) 150%);
+    background: linear-gradient(
+      149deg,
+      var(--color-base-100) 20%,
+      var(--color-secondary) 150%
+    );
   }
 </style>
