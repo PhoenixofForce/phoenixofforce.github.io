@@ -3,8 +3,10 @@ import Layout from "../layouts/Layout.astro";
 import Summary from "../components/Summary.astro";
 import Biography from "../components/Biography.astro";
 import TechStack from "../components/TechStack.astro";
-import ProjectGrid from "../components/ProjectGrid.svelte";
 import { projects } from "../data/projects";
+import ProjectGrid from "../components/ProjectGrid.svelte";
+
+const showcaseProjects = projects.filter((project) => project.showcase);
 ---
 
 <Layout>
@@ -37,8 +39,10 @@ import { projects } from "../data/projects";
 
   <div class="w-[90vw] mx-auto pb-16">
     <h1 class="text-3xl font-bold tracking-widest text-center mb-6">
-      MY LATEST PROJECTS
+      SHOWCASE
     </h1>
-    <ProjectGrid projects={projects.slice(0, 4)} />
+    <div class="flex flex-col gap-8">
+      <ProjectGrid projects={showcaseProjects} />
+    </div>
   </div>
 </Layout>
