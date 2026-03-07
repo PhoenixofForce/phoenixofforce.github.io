@@ -25,7 +25,7 @@ const { title = "Ole | Software Developer", activeLink = 0 } = Astro.props;
       if (t) document.documentElement.setAttribute("data-theme", t);
     </script>
   </head>
-  <body class="min-h-screen">
+  <body class="min-h-screen flex flex-col">
     <Header client:load {activeLink} />
     <slot />
     <ThemeToggle client:load />
