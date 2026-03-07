@@ -1,22 +1,42 @@
 {
-  "name": "svelte-app",
-  "version": "1.0.0",
+  "name": "phoenixofforce-dev",
+  "type": "module",
+  "version": "0.0.1",
   "scripts": {
-    "build": "rollup -c",
-    "dev": "rollup -c -w",
-    "start": "sirv public"
-  },
-  "devDependencies": {
-    "@rollup/plugin-commonjs": "^16.0.0",
-    "@rollup/plugin-node-resolve": "^10.0.0",
-    "rollup": "^2.3.4",
-    "rollup-plugin-css-only": "^3.1.0",
-    "rollup-plugin-livereload": "^2.0.0",
-    "rollup-plugin-svelte": "^7.0.0",
-    "rollup-plugin-terser": "^7.0.0",
-    "svelte": "^3.0.0"
+    "dev": "astro dev --host",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro",
+    "check": "svelte-check --tsconfig ./tsconfig.json",
+    "lint": "eslint src",
+    "lint-fix": "eslint src --fix",
+    "format": "prettier --check src",
+    "format-fix": "prettier --write src",
+    "ci": "npm run check && npm run lint && npm run build && npm run format",
+    "fix": "npm run lint-fix && npm run format-fix"
   },
   "dependencies": {
-    "sirv-cli": "^1.0.0"
+    "@astrojs/svelte": "^7.2.5",
+    "@lucide/astro": "^0.575.0",
+    "@lucide/svelte": "^0.575.0",
+    "@tailwindcss/vite": "^4.2.1",
+    "astro": "^5.17.1",
+    "daisyui": "^5.5.19",
+    "svelte": "^5.53.3",
+    "tailwindcss": "^4.2.1",
+    "typescript": "^5.9.3"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@typescript-eslint/eslint-plugin": "^8.56.1",
+    "@typescript-eslint/parser": "^8.56.1",
+    "eslint": "^10.0.2",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-svelte": "^3.15.0",
+    "globals": "^17.3.0",
+    "prettier": "^3.8.1",
+    "prettier-plugin-astro": "^0.14.1",
+    "prettier-plugin-svelte": "^3.5.0",
+    "typescript-eslint": "^8.56.1"
   }
 }

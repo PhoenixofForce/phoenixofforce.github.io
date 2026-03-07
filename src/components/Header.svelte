@@ -1,74 +1,54 @@
-<script>
-    export let activeLink = 0;
-    let mouseX = 250;
+<script lang="ts">
+	let mouseX = $state(250);
+
+	interface Props {
+		activeLink?: number;
+	}
+
+	let { activeLink = 0 }: Props = $props();
 </script>
 
-<!-- Tracking mouse position for gradient position -->
 <div
-    class="header"
-    style="--x: {mouseX + 'px'}"
-    on:mousemove={(m) => (mouseX = m.x)}
+	class="header w-full mb-8 border-b border-solid shadow-md"
+	style="--x: {mouseX}px"
+	onmousemove={(m: MouseEvent) => (mouseX = m.x)}
+	role="banner"
 >
-    <nav class="nav">
-        <div class="nav-left">
-            <a class="brand noselect" href="/"> PhoenixofForce </a>
-        </div>
-
-        <div class="nav-right">
-            <a href="/" class:active={activeLink == 0}> About </a>
-            <a href="projects" class:active={activeLink == 1}> Projects </a>
-        </div>
-    </nav>
+	<nav class="navbar bg-base-200 px-4 md:px-6">
+		<div class="navbar-start">
+			<a class="text-primary text-xl font-bold select-none" href="/">PhoenixofForce</a>
+		</div>
+		<div class="navbar-end gap-2">
+			<a href="/" class="btn btn-sm" class:btn-secondary={activeLink === 0} class:btn-ghost={activeLink !== 0}>About</a>
+			<a href="/projects" class="btn btn-sm" class:btn-secondary={activeLink === 1} class:btn-ghost={activeLink !== 1}>Projects</a>
+		</div>
+	</nav>
 </div>
 
 <style>
-    .brand {
-        background: linear-gradient(
-            180deg,
-            var(--color-secondary),
-            var(--color-primary),
-            var(--color-secondary)
-        );
-        background-clip: text;
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-    }
+	.header {
+		border-image: linear-gradient(
+				to right,
+				var(--color-base-100),
+				var(--color-secondary),
+				var(--color-primary),
+				var(--x),
+				var(--color-secondary),
+				var(--color-base-100)
+			)
+			1;
+	}
 
-    .header {
-        width: 100%;
-        margin-bottom: 32px;
-        border-width: 0px;
-        border-bottom: 1px;
-        border-style: solid;
-        border-image: linear-gradient(
-                to right,
-                var(--bg-color),
-                var(--color-secondary),
-                var(--color-primary),
-                var(--x),
-                var(--color-secondary),
-                var(--bg-color)
-            )
-            1;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-    }
-    .nav {
-        background: var(--bg-secondary-color);
-    }
-
-    @media screen and (min-width: 481px) {
-        nav {
-            height: 60px;
-        }
-    }
-
-    @media screen and (max-width: 480px) {
-        nav {
-            height: 120px;
-        }
-    }
-
-    .nav-right {
-        margin-right: 24px;
-    }
+	:global([data-theme="phoenix-light"]) .header {
+		border-image: linear-gradient(
+				to right,
+				var(--color-base-300),
+				var(--color-primary),
+				var(--color-secondary),
+				var(--x),
+				var(--color-primary),
+				var(--color-base-300)
+			)
+			1;
+	}
 </style>
