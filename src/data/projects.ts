@@ -16,9 +16,9 @@ export interface Project {
 
 export const projects: Project[] = [
   {
-    title: "Card Gallery",
+    title: "[WIP] Card Gallery",
     description:
-      "An [WIP] interactive card gallery and rules reference app for tabletop card games.",
+      "An interactive card gallery and rules reference app for tabletop card games.",
     year: "2026",
     image: "",
     tags: ["Svelte", "TypeScript", "Tailwind", "DaisyUI"],
