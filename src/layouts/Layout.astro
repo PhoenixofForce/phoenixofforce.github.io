@@ -2,6 +2,7 @@
 import "../styles/global.css";
 import Header from "../components/Header.svelte";
 import ThemeToggle from "../components/ThemeToggle.svelte";
+import Footer from "../components/Footer.astro";
 
 interface Props {
   title?: string;
@@ -24,6 +25,7 @@ const { title = "Ole | Software Developer", activeLink = 0 } = Astro.props;
     <Header client:load {activeLink} />
     <slot />
     <ThemeToggle client:load />
+    <Footer />
   </body>
 </html>
 
