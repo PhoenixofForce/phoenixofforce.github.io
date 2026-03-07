@@ -6,13 +6,6 @@
     browser ? localStorage.getItem("theme") !== "phoenix-light" : true,
   );
 
-  if (browser) {
-    const saved = localStorage.getItem("theme");
-    if (saved) {
-      document.documentElement.setAttribute("data-theme", saved);
-    }
-  }
-
   function toggle() {
     isDark = !isDark;
     const theme = isDark ? "phoenix" : "phoenix-light";

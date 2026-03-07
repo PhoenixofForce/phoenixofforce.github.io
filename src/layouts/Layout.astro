@@ -20,6 +20,10 @@ const { title = "Ole | Software Developer", activeLink = 0 } = Astro.props;
     <link rel="icon" type="image/png" href="/favicon.png" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
+    <script is:inline>
+      const t = localStorage.getItem("theme");
+      if (t) document.documentElement.setAttribute("data-theme", t);
+    </script>
   </head>
   <body class="min-h-screen">
     <Header client:load {activeLink} />
