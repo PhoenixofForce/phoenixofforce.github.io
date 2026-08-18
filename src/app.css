@@ -89,20 +89,26 @@ body {
   --bg-glow: oklch(70% 0.115 250);
 }
 
-body {
+html {
   background: linear-gradient(
     329deg,
     var(--color-base-100) 20%,
     var(--bg-glow) 150%
   );
+  background-attachment: fixed;
 }
 
-[data-theme="phoenix-light"] body {
+[data-theme="phoenix-light"] {
   background: linear-gradient(
     149deg,
     var(--color-base-100) 22%,
     var(--bg-glow) 128%
   );
+  background-attachment: fixed;
+}
+
+body {
+  background: transparent;
 }
 
 .no-transitions,
