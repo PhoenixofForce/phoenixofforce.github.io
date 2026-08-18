@@ -2,7 +2,7 @@
   import { Github, Twitter } from "@lucide/svelte";
 </script>
 
-<div class="flex flex-col items-center max-w-md text-center">
+<div class="flex flex-col items-center max-w-sm text-center">
   <div class="w-24 h-24 rounded-full bg-base-100 shadow-lg">
     <img src="/images/white.png" alt="Avatar" class="avatar w-24 h-24 rounded-full" />
   </div>

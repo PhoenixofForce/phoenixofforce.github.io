@@ -20,7 +20,7 @@
       </h4>
       <div class="flex flex-wrap gap-1.5 max-md:justify-center">
         {#each category.tags as tag (tag)}
-          <span class="badge badge-sm bg-base-200">{tag}</span>
+          <span class="badge badge-sm bg-base-100 border-base-300 text-base-content">{tag}</span>
         {/each}
       </div>
     </div>

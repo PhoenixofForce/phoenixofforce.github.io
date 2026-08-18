@@ -30,7 +30,7 @@
   }
 </script>
 
-<div class="w-[90vw] mx-auto pb-16">
+<div class="w-[90vw] max-w-6xl mx-auto pb-16">
   <form class="flex gap-2 flex-wrap mb-8 justify-center">
     {#each allTags as tag (tag)}
       <input

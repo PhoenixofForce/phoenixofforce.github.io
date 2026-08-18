@@ -12,13 +12,13 @@
   <title>Ole | Software Developer</title>
 </svelte:head>
 
-<div class="w-[90vw] mx-auto">
+<div class="w-[90vw] max-w-6xl mx-auto">
   <h1 class="mt-12 mb-2 text-4xl font-bold tracking-widest max-md:text-center">HELLO THERE 👋</h1>
 </div>
 
 <div class="bg-secondary text-secondary-content mb-8">
   <div
-    class="w-[90vw] mx-auto py-5 pb-8 flex justify-evenly gap-4 max-md:flex-col max-md:items-center"
+    class="w-[90vw] max-w-6xl mx-auto py-5 pb-8 flex justify-between gap-10 max-md:flex-col max-md:items-center max-md:gap-4"
   >
     <Summary />
     <Biography />
@@ -35,7 +35,7 @@
   </a>
 </div>
 
-<div class="w-[90vw] mx-auto pb-16">
+<div class="w-[90vw] max-w-6xl mx-auto pb-16">
   <h1 class="text-3xl font-bold tracking-widest text-center mb-6">SHOWCASE</h1>
   <div class="flex flex-col gap-8">
     <ProjectGrid projects={showcaseProjects} />

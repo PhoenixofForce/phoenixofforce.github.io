@@ -5,7 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/png" href="/favicon.png?v=2" />
     <script>
-      const t = localStorage.getItem("theme");
+      let t = localStorage.getItem("theme");
+      if (t && t.startsWith("phoenix-light")) {
+        t = "phoenix-light";
+        localStorage.setItem("theme", t);
+      }
       if (t) document.documentElement.setAttribute("data-theme", t);
     </script>
     %sveltekit.head%
