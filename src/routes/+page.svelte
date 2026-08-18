@@ -4,7 +4,7 @@
   import TechStack from "$lib/components/TechStack.svelte";
   import ProjectGrid from "$lib/components/ProjectGrid.svelte";
   import { projects } from "$lib/projects";
-  import { LayoutGrid } from "@lucide/svelte";
+  import { LayoutGrid, Mail } from "@lucide/svelte";
   import { resolve } from "$app/paths";
 
   const showcaseProjects = projects.filter((project) => project.showcase);
@@ -14,13 +14,13 @@
   <title>Ole | Software Developer</title>
 </svelte:head>
 
-<div class="w-[90vw] max-w-6xl mx-auto">
+<div class="page-width">
   <h1 class="mt-12 mb-2 text-4xl font-bold tracking-widest max-md:text-center">HELLO THERE 👋</h1>
 </div>
 
 <div class="bg-secondary text-secondary-content mb-8 py-8">
   <div
-    class="w-[90vw] max-w-6xl mx-auto py-5 pb-8 flex justify-between gap-10 max-md:flex-col max-md:items-center max-md:gap-4"
+    class="page-width py-5 pb-8 flex justify-between gap-10 max-md:flex-col max-md:items-center max-md:gap-4"
   >
     <Summary />
     <Biography />
@@ -33,11 +33,12 @@
     href="mailto:contact@phoenixofforce.dev"
     class="btn btn-primary btn-lg tracking-wide hover:scale-115 transition-all"
   >
+    <Mail size="1.3rem" />
     Contact Me
   </a>
 </div>
 
-<div class="w-[90vw] max-w-6xl mx-auto pb-16">
+<div class="page-width pb-16">
   <div class="flex flex-col sm:flex-row mb-4">
     <div class="flex-1"></div>
     <div class="grow">

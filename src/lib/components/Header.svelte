@@ -25,7 +25,7 @@
   role="banner"
 >
   <nav class="navbar bg-base-200 min-h-0 px-0 py-4">
-    <div class="w-[90vw] max-w-6xl mx-auto flex items-center justify-between">
+    <div class="page-width flex items-center justify-between">
       <a
         href={resolve("/")}
         class="text-lg sm:text-xl font-semibold tracking-wider select-none transition-opacity hover:opacity-80"

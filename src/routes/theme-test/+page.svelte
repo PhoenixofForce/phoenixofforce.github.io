@@ -2,7 +2,7 @@
   <title>Theme Test</title>
 </svelte:head>
 
-<div class="w-[90vw] max-w-6xl mx-auto py-8">
+<div class="page-width py-8">
   <h1 class="text-3xl font-bold mb-8">Theme Test</h1>
 
   <div class="flex flex-wrap gap-4">

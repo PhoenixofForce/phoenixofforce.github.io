@@ -22,7 +22,7 @@
 </script>
 
 <div
-  class="sticky bottom-4 mt-auto mb-4 w-fit ml-auto mr-4 z-50 opacity-50 transition-all duration-300 will-change-transform hover:scale-110 hover:opacity-100"
+  class="sticky bottom-4 mt-auto mb-4 w-fit ml-auto pin-right z-50 opacity-50 transition-all duration-300 will-change-transform hover:scale-110 hover:opacity-100"
 >
   {#if mounted}
     <label class="swap swap-rotate">

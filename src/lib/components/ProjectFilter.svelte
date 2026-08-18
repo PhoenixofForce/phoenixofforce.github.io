@@ -36,7 +36,7 @@
   }
 </script>
 
-<div class="w-[90vw] max-w-6xl mx-auto pb-16">
+<div class="page-width pb-16">
   <div class="mb-8 flex w-full justify-end gap-2">
     <div class="join">
       <input class="input join-item" bind:value={filter} placeholder="Search..." />
@@ -51,13 +51,13 @@
           </button>
         {/if}
         <button class="btn join-item" popovertarget="popover-1" style="anchor-name:--anchor-1">
-          <Funnel size="1.4em" />
+          <Funnel size="1.3em" />
         </button>
       </div>
     </div>
 
     <ul
-      class="dropdown dropdown-end menu w-52 rounded-box bg-base-100 shadow-sm max-h-62"
+      class="dropdown dropdown-end menu w-52 rounded-box bg-base-100 shadow-sm max-h-62 flex flex-col gap-1 flex-nowrap"
       popover
       id="popover-1"
       style="position-anchor:--anchor-1"
