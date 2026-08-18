@@ -4,7 +4,7 @@
   const year = new Date().getFullYear();
 </script>
 
-<footer class="footer sm:footer-horizontal bg-neutral text-neutral-content items-center p-4 mt-auto">
+<footer class="footer sm:footer-horizontal bg-neutral text-neutral-content items-center p-4">
   <aside class="grid-flow-col items-center">
     <p class="text-xs">Copyright © {year} - All right reserved</p>
   </aside>

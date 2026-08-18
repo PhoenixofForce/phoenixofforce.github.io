@@ -21,14 +21,14 @@
   }
 </script>
 
-{#if mounted}
-  <div
-    class="sticky bottom-4 mb-4 w-fit ml-auto mr-4 z-50 opacity-50 transition-all duration-300 will-change-transform hover:scale-110 hover:opacity-100"
-  >
+<div
+  class="sticky bottom-4 mt-auto mb-4 w-fit ml-auto mr-4 z-50 opacity-50 transition-all duration-300 will-change-transform hover:scale-110 hover:opacity-100"
+>
+  {#if mounted}
     <label class="swap swap-rotate">
       <input type="checkbox" checked={isDark} onchange={toggle} />
       <Sun class="swap-off" size="24" />
       <Moon class="swap-on" size="24" />
     </label>
-  </div>
-{/if}
+  {/if}
+</div>
