@@ -3,6 +3,7 @@
   import Biography from "$lib/components/Biography.svelte";
   import TechStack from "$lib/components/TechStack.svelte";
   import ProjectGrid from "$lib/components/ProjectGrid.svelte";
+  import Seo from "$lib/components/Seo.svelte";
   import { projects } from "$lib/projects";
   import { LayoutGrid, Mail } from "@lucide/svelte";
   import { resolve } from "$app/paths";
@@ -10,9 +11,10 @@
   const showcaseProjects = projects.filter((project) => project.showcase);
 </script>
 
-<svelte:head>
-  <title>Ole | Software Developer</title>
-</svelte:head>
+ <Seo
+  title="Ole | Software Developer"
+  description="Software developer from Germany. Game development, competitive programming, and building things for the web."
+/>
 
 <div class="page-width">
   <h1 class="mt-12 mb-2 text-4xl font-bold tracking-widest max-md:text-center">HELLO THERE 👋</h1>
