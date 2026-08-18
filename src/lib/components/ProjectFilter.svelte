@@ -1,6 +1,7 @@
 <script lang="ts">
   import ProjectGrid from "./ProjectGrid.svelte";
   import type { Project } from "$lib/projects";
+  import { Funnel, X } from "@lucide/svelte";
 
   interface Props {
     projects: Project[];
@@ -8,17 +9,14 @@
 
   const props: Props = $props();
 
-  let allTags = $derived(
-    [...new Set(props.projects.flatMap((p) => p.tags))].sort(),
-  );
+  let allTags = $derived([...new Set(props.projects.flatMap((p) => p.tags))].sort());
   let selectedTags: string[] = $state([]);
 
+  let filter = $state("");
   let filtered = $derived(
-    selectedTags.length === 0
-      ? props.projects
-      : props.projects.filter((p) =>
-          p.tags.some((t) => selectedTags.includes(t)),
-        ),
+    props.projects
+      .filter((p) => p.tags.some((t) => !selectedTags.length || selectedTags.includes(t)))
+      .filter((p) => JSON.stringify(p).toLowerCase().includes(filter.toLowerCase())),
   );
 
   function toggleTag(tag: string) {
@@ -31,24 +29,46 @@
 </script>
 
 <div class="w-[90vw] max-w-6xl mx-auto pb-16">
-  <form class="flex gap-2 flex-wrap mb-8 justify-center">
-    {#each allTags as tag (tag)}
-      <input
-        type="checkbox"
-        class="btn"
-        name="frameworks"
-        checked={selectedTags.includes(tag)}
-        onchange={() => toggleTag(tag)}
-        aria-label={tag}
-      />
-    {/each}
-    <input
-      class="btn btn-square"
-      type="reset"
-      value="×"
-      onclick={() => (selectedTags = [])}
-    />
-  </form>
+  <div class="mb-8 flex w-full justify-end gap-2">
+    <div class="join">
+      <input class="input join-item" bind:value={filter} placeholder="Search..." />
+      <div class="indicator">
+        {#if selectedTags.length}
+          <button
+            class="indicator-item badge badge-sm badge-primary"
+            onclick={() => (selectedTags = [])}
+          >
+            {selectedTags.length}
+            <X size="1rem" />
+          </button>
+        {/if}
+        <button class="btn join-item" popovertarget="popover-1" style="anchor-name:--anchor-1">
+          <Funnel size="1.4em" />
+        </button>
+      </div>
+    </div>
+
+    <ul
+      class="dropdown dropdown-end menu w-52 rounded-box bg-base-100 shadow-sm max-h-96"
+      popover
+      id="popover-1"
+      style="position-anchor:--anchor-1"
+    >
+      {#each allTags as tag (tag)}
+        <li>
+          <label class="label">
+            <input
+              type="checkbox"
+              checked={selectedTags.includes(tag)}
+              class="checkbox"
+              onclick={() => toggleTag(tag)}
+            />
+            {tag}
+          </label>
+        </li>
+      {/each}
+    </ul>
+  </div>
 
   <ProjectGrid projects={filtered} />
 </div>
