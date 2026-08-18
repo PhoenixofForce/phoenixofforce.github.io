@@ -1,0 +1,20 @@
+<div class="flex flex-col justify-center max-w-lg">
+  <div class="mb-5">
+    <h3 class="text-primary text-xl font-semibold mb-2 max-md:text-center">What I Do</h3>
+    <p>
+      I create video games, programs, websites and apps. I regularly participate in GameJams like the
+      Ludum Dare, and since 2020 I've been competing in the yearly Advent of Code (catching up with
+      past years in the other 11 months).
+    </p>
+  </div>
+
+  <div>
+    <h3 class="text-primary text-xl font-semibold mb-2 max-md:text-center">What I Love</h3>
+    <p>
+      When I'm not coding, you'll find me watching anime, drinking tea gongfu style, or playing games
+      (card, board, or video—no matter how old). I've modded a Game Boy with a new screen,
+      rechargeable battery, and tiny blue LED. Recently I got into 3D printing and miniature
+      painting, and picked up my Rubik's Cube again with a PB-AO5 of 16.81s.
+    </p>
+  </div>
+</div>

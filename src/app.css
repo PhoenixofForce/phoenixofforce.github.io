@@ -75,6 +75,28 @@ html {
   scroll-behavior: smooth;
 }
 
+html,
+body {
+  margin: 0;
+  width: 100%;
+}
+
+body {
+  background: linear-gradient(
+    329deg,
+    var(--color-base-100) 20%,
+    var(--color-secondary) 150%
+  );
+}
+
+[data-theme="phoenix-light"] body {
+  background: linear-gradient(
+    149deg,
+    var(--color-base-100) 20%,
+    var(--color-secondary) 150%
+  );
+}
+
 .no-transitions,
 .no-transitions * {
   transition: none !important;

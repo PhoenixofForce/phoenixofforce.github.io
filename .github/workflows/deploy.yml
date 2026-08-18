@@ -6,10 +6,11 @@ on:
       - main
     paths:
       - 'src/**'
-      - 'public/**'
+      - 'static/**'
       - 'package.json'
       - 'package-lock.json'
-      - 'astro.config.*'
+      - 'svelte.config.js'
+      - 'vite.config.ts'
       - 'tsconfig.json'
 
 permissions:
@@ -43,7 +44,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: 'dist'
+          path: 'build'
 
   deploy:
     environment:

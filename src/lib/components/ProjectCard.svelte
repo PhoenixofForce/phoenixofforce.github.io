@@ -1,6 +1,6 @@
 <script lang="ts">
   import { Github, Globe, Youtube, Play } from "@lucide/svelte";
-  import type { Project } from "../data/projects";
+  import type { Project } from "$lib/projects";
 
   interface Props {
     project: Project;
@@ -42,12 +42,12 @@
     <p class="text-sm text-base-content/70">{project.description}</p>
 
     <div class="flex gap-2 my-1">
-      {#each project.links as link}
+      {#each project.links as link (link.url)}
         {@const Icon = iconMap[link.icon] ?? Globe}
         <a
           href={link.url}
           target="_blank"
-          rel="noopener noreferrer"
+          rel="external noopener noreferrer"
           class="btn btn-ghost btn-sm btn-circle hover:scale-115 transition-transform"
           title={link.label}
         >
@@ -58,7 +58,7 @@
 
     <div class="card-actions mt-auto pt-2 border-t border-base-300">
       <div class="flex flex-wrap gap-1.5">
-        {#each [...project.tags].sort() as tag}
+        {#each [...project.tags].sort() as tag (tag)}
           <span class="badge badge-sm bg-base-200">{tag}</span>
         {/each}
       </div>

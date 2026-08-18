@@ -1,6 +1,6 @@
 <script lang="ts">
   import ProjectGrid from "./ProjectGrid.svelte";
-  import type { Project } from "../data/projects";
+  import type { Project } from "$lib/projects";
 
   interface Props {
     projects: Project[];
@@ -32,7 +32,7 @@
 
 <div class="w-[90vw] mx-auto pb-16">
   <form class="flex gap-2 flex-wrap mb-8 justify-center">
-    {#each allTags as tag}
+    {#each allTags as tag (tag)}
       <input
         type="checkbox"
         class="btn"

@@ -1,10 +1,13 @@
 <script lang="ts">
   import { Sun, Moon } from "@lucide/svelte";
 
-  const browser = typeof window !== "undefined";
-  let isDark = $state(
-    browser ? localStorage.getItem("theme") !== "phoenix-light" : true,
-  );
+  let mounted = $state(false);
+  let isDark = $state(true);
+
+  $effect(() => {
+    isDark = localStorage.getItem("theme") !== "phoenix-light";
+    mounted = true;
+  });
 
   function toggle() {
     isDark = !isDark;
@@ -18,7 +21,7 @@
   }
 </script>
 
-{#if browser}
+{#if mounted}
   <div
     class="sticky bottom-4 mb-4 w-fit ml-auto mr-4 z-50 opacity-50 transition-all duration-300 will-change-transform hover:scale-110 hover:opacity-100"
   >

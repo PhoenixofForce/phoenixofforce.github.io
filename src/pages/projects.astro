@@ -1,9 +1,0 @@
----
-import Layout from '../layouts/Layout.astro';
-import ProjectFilter from '../components/ProjectFilter.svelte';
-import { projects } from '../data/projects';
----
-
-<Layout title="Projects | Ole" activeLink={1}>
-	<ProjectFilter client:load {projects} />
-</Layout>

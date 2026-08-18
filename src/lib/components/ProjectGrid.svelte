@@ -1,6 +1,6 @@
 <script lang="ts">
   import ProjectCard from "./ProjectCard.svelte";
-  import type { Project } from "../data/projects";
+  import type { Project } from "$lib/projects";
 
   interface Props {
     projects: Project[];
@@ -10,7 +10,7 @@
 </script>
 
 <div class="flex flex-wrap justify-center gap-8">
-  {#each projects as project}
+  {#each projects as project (project.title + project.year)}
     <div class="w-80">
       <ProjectCard {project} />
     </div>

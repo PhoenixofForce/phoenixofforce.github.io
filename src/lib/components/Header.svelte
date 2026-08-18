@@ -1,4 +1,6 @@
 <script lang="ts">
+	import { resolve } from "$app/paths";
+
 	let mouseX = $state(250);
 
 	interface Props {
@@ -16,11 +18,11 @@
 >
 	<nav class="navbar bg-base-200 px-4 md:px-6">
 		<div class="navbar-start">
-			<a class="text-primary text-xl font-bold select-none" href="/">PhoenixofForce</a>
+			<a class="text-primary text-xl font-bold select-none" href={resolve("/")}>PhoenixofForce</a>
 		</div>
 		<div class="navbar-end gap-2">
-			<a href="/" class="btn btn-sm" class:btn-secondary={activeLink === 0} class:btn-ghost={activeLink !== 0}>About</a>
-			<a href="/projects" class="btn btn-sm" class:btn-secondary={activeLink === 1} class:btn-ghost={activeLink !== 1}>Projects</a>
+			<a href={resolve("/")} class="btn btn-sm" class:btn-secondary={activeLink === 0} class:btn-ghost={activeLink !== 0}>About</a>
+			<a href={resolve("/projects")} class="btn btn-sm" class:btn-secondary={activeLink === 1} class:btn-ghost={activeLink !== 1}>Projects</a>
 		</div>
 	</nav>
 </div>

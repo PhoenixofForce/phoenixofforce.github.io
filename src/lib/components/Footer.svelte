@@ -1,16 +1,12 @@
----
-import { Github, Mail, Twitter } from "@lucide/astro";
+<script lang="ts">
+  import { Github, Mail, Twitter } from "@lucide/svelte";
 
-const year = new Date().getFullYear();
----
+  const year = new Date().getFullYear();
+</script>
 
-<footer
-  class="footer sm:footer-horizontal bg-neutral text-neutral-content items-center p-4 mt-auto"
->
+<footer class="footer sm:footer-horizontal bg-neutral text-neutral-content items-center p-4 mt-auto">
   <aside class="grid-flow-col items-center">
-    <p class="text-xs">
-      Copyright © {new Date().getFullYear()} - All right reserved
-    </p>
+    <p class="text-xs">Copyright © {year} - All right reserved</p>
   </aside>
   <nav class="grid-flow-col gap-4 md:place-self-center md:justify-self-end">
     <a
