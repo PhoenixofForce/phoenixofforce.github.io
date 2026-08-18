@@ -12,10 +12,18 @@
   let allTags = $derived([...new Set(props.projects.flatMap((p) => p.tags))].sort());
   let selectedTags: string[] = $state([]);
 
+  let filterAnd = $state(true);
+
   let filter = $state("");
   let filtered = $derived(
     props.projects
-      .filter((p) => p.tags.some((t) => !selectedTags.length || selectedTags.includes(t)))
+      .filter(
+        (p) =>
+          !selectedTags.length ||
+          (filterAnd
+            ? selectedTags.every((t) => p.tags.includes(t))
+            : selectedTags.some((t) => p.tags.includes(t))),
+      )
       .filter((p) => JSON.stringify(p).toLowerCase().includes(filter.toLowerCase())),
   );
 
@@ -49,11 +57,18 @@
     </div>
 
     <ul
-      class="dropdown dropdown-end menu w-52 rounded-box bg-base-100 shadow-sm max-h-96"
+      class="dropdown dropdown-end menu w-52 rounded-box bg-base-100 shadow-sm max-h-62"
       popover
       id="popover-1"
       style="position-anchor:--anchor-1"
     >
+      <button
+        class="btn w-full {filterAnd ? 'btn-primary' : 'btn-secondary'}"
+        onclick={() => (filterAnd = !filterAnd)}
+      >
+        {filterAnd ? "Uses AND" : "Uses OR"}
+      </button>
+
       {#each allTags as tag (tag)}
         <li>
           <label class="label">

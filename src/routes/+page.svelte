@@ -4,7 +4,7 @@
   import TechStack from "$lib/components/TechStack.svelte";
   import ProjectGrid from "$lib/components/ProjectGrid.svelte";
   import { projects } from "$lib/projects";
-  import { ArrowRight } from "@lucide/svelte";
+  import { LayoutGrid } from "@lucide/svelte";
   import { resolve } from "$app/paths";
 
   const showcaseProjects = projects.filter((project) => project.showcase);
@@ -45,7 +45,7 @@
     </div>
     <div class="flex-1">
       <a href={resolve("/projects")} class="btn btn-ghost w-full">
-        Show All <ArrowRight size="1.3rem" />
+        Show All <LayoutGrid size="1.3rem" />
       </a>
     </div>
   </div>
