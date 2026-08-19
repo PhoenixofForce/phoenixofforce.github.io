@@ -14,6 +14,13 @@ export interface Project {
   showcase?: boolean;
 }
 
+export function projectSlug(title: string) {
+  return title
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-|-$/g, "");
+}
+
 export const projects: Project[] = [
   {
     title: "[WIP] Card Gallery",

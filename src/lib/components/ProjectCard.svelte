@@ -1,12 +1,14 @@
 <script lang="ts">
   import { Github, Globe, Youtube, Play } from "@lucide/svelte";
   import type { Project } from "$lib/projects";
+  import { hasReadme } from "$lib/readme";
 
   interface Props {
     project: Project;
+    onopen: () => void;
   }
 
-  let { project }: Props = $props();
+  let { project, onopen }: Props = $props();
 
   const iconMap: Record<string, typeof Github> = {
     github: Github,
@@ -40,6 +42,9 @@
     </div>
 
     <p class="text-sm text-base-content/70">{project.description}</p>
+    {#if hasReadme(project)}
+      <button class="w-fit italic underline cursor-pointer" onclick={onopen}>Read more</button>
+    {/if}
 
     <div class="flex gap-2 my-1">
       {#each project.links as link (link.url)}

@@ -13,6 +13,10 @@ export default defineConfig([
     extends: ["js/recommended"],
     languageOptions: { globals: globals.browser },
   },
+  {
+    files: ["scripts/**/*.ts"],
+    languageOptions: { globals: globals.node },
+  },
   tseslint.configs.recommended,
   svelte.configs.recommended,
   prettier,
