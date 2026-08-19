@@ -1,8 +1,10 @@
 <script lang="ts">
   import { Github, Globe, Youtube, Play, X } from "@lucide/svelte";
-  import type { Project } from "$lib/projects";
+  import { projectImage } from "$lib/images";
+  import { youtubeEmbed, type Project } from "$lib/projects";
   import { getReadme } from "$lib/readme";
   import Markdown from "./Markdown.svelte";
+  import YoutubeEmbed from "./YoutubeEmbed.svelte";
 
   interface Props {
     project: Project | null;
@@ -20,6 +22,7 @@
 
   let dialog: HTMLDialogElement;
   const readme = $derived(project && getReadme(project));
+  const embed = $derived(project && youtubeEmbed(project));
 
   $effect(() => {
     if (project) dialog.showModal();
@@ -37,6 +40,16 @@
       </form>
 
       <div class="overflow-y-auto p-6">
+        {#if embed}
+          <div class="mb-6 aspect-video bg-black rounded-lg overflow-hidden">
+            <YoutubeEmbed
+              src={embed}
+              poster={projectImage(project.image)}
+              title={`${project.title} video demo`}
+            />
+          </div>
+        {/if}
+
         <div class="flex items-baseline gap-2">
           <h3 class="text-2xl font-bold">{project.title}</h3>
           {#if project.year}
