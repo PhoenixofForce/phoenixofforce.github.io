@@ -1,7 +1,8 @@
 <script lang="ts">
   import { Github, Globe, Youtube, Play } from "@lucide/svelte";
-  import type { Project } from "$lib/projects";
+  import { demoSrc, type Project } from "$lib/projects";
   import { hasReadme } from "$lib/readme";
+  import DemoVideo from "./DemoVideo.svelte";
 
   interface Props {
     project: Project;
@@ -16,12 +17,22 @@
     youtube: Youtube,
     play: Play,
   };
+
+  const demo = $derived(demoSrc(project));
+
+  let hovered = $state(false);
 </script>
 
-<div
+<article
   class="card bg-base-100 shadow-md hover:shadow-xl hover:scale-105 transition-all duration-200 h-full"
+  onmouseenter={() => (hovered = true)}
+  onmouseleave={() => (hovered = false)}
+  onfocusin={() => (hovered = true)}
+  onfocusout={(e) => {
+    if (!e.currentTarget.contains(e.relatedTarget as Node | null)) hovered = false;
+  }}
 >
-  <figure class="h-60 bg-base-200 rounded-lg overflow-hidden">
+  <figure class="relative h-60 bg-base-200 rounded-lg overflow-hidden">
     {#if project.image}
       <img
         src={`/images/${project.image}.png`}
@@ -30,6 +41,10 @@
       />
     {:else}
       <div class="w-full h-full bg-base-300"></div>
+    {/if}
+
+    {#if hovered && demo}
+      <DemoVideo src={demo} />
     {/if}
   </figure>
 
@@ -69,4 +84,4 @@
       </div>
     </div>
   </div>
-</div>
+</article>

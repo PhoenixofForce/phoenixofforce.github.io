@@ -21,6 +21,15 @@ export function projectSlug(title: string) {
     .replace(/^-|-$/g, "");
 }
 
+/**
+ * Every project with a YouTube demo has a muted hover loop cut from that same
+ * recording, see scripts/encode-demos.sh.
+ */
+export function demoSrc(project: Project) {
+  const hasVideo = project.links.some(({ icon }) => icon === "youtube");
+  return hasVideo ? `/videos/${projectSlug(project.title)}.mp4` : null;
+}
+
 export const projects: Project[] = [
   {
     title: "[WIP] Card Gallery",
