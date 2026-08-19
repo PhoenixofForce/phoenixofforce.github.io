@@ -2,7 +2,7 @@
   import { Github, Twitter } from "@lucide/svelte";
 </script>
 
-<div class="flex flex-col items-center max-w-sm text-center">
+<div class="flex flex-col items-center max-w-lg text-center">
   <div class="w-24 h-24 rounded-full bg-base-100 shadow-lg">
     <img src="/images/white.png" alt="Avatar" class="avatar w-24 h-24 rounded-full" />
   </div>
@@ -30,7 +30,7 @@
 
   <div class="mb-5">
     <h3 class="text-primary text-xl font-semibold mb-2">About me</h3>
-    <p>
+    <p class="md:text-center text-start">
       Hey, I'm Ole from Germany. I'm a software developer with a passion for game development,
       competitive programming, and building cool stuff on the web.
     </p>
