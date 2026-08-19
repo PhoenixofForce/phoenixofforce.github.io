@@ -1,5 +1,6 @@
 <script lang="ts">
   import { Github, Globe, Youtube, Play } from "@lucide/svelte";
+  import { projectImage } from "$lib/images";
   import { demoSrc, type Project } from "$lib/projects";
   import { hasReadme } from "$lib/readme";
   import DemoVideo from "./DemoVideo.svelte";
@@ -19,6 +20,7 @@
   };
 
   const demo = $derived(demoSrc(project));
+  const image = $derived(projectImage(project.image));
 
   let hovered = $state(false);
 </script>
@@ -32,12 +34,16 @@
     if (!e.currentTarget.contains(e.relatedTarget as Node | null)) hovered = false;
   }}
 >
-  <figure class="relative h-60 bg-base-200 rounded-lg overflow-hidden">
-    {#if project.image}
-      <img
-        src={`/images/${project.image}.png`}
+  <figure
+    class="relative h-60 bg-base-200 rounded-lg overflow-hidden [&>picture]:block [&>picture]:size-full"
+  >
+    {#if image}
+      <enhanced:img
+        src={image}
+        sizes="320px"
+        loading="lazy"
         alt={`${project.title} screenshot`}
-        class="w-full h-full object-cover"
+        class="block w-full h-full object-cover"
       />
     {:else}
       <div class="w-full h-full bg-base-300"></div>

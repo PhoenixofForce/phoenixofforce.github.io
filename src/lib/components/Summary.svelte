@@ -3,8 +3,13 @@
 </script>
 
 <div class="flex flex-col items-center max-w-lg text-center">
-  <div class="w-24 h-24 rounded-full bg-base-100 shadow-lg">
-    <img src="/images/white.png" alt="Avatar" class="avatar w-24 h-24 rounded-full" />
+  <div class="w-24 h-24 rounded-full bg-base-100 shadow-lg [&>picture]:block">
+    <enhanced:img
+      src="$lib/assets/images/white.png?w=192;96"
+      sizes="96px"
+      alt="Avatar"
+      class="avatar block w-24 h-24 rounded-full"
+    />
   </div>
 
   <div class="flex gap-4 mt-2 mb-3">
