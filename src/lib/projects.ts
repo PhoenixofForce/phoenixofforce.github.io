@@ -34,13 +34,29 @@ export function youtubeEmbed(project: Project) {
 
 export const projects: Project[] = [
   {
-    title: "[WIP] Card Gallery",
+    title: "Chafynch",
     description:
-      "An interactive card gallery and rules reference app for tabletop card games.",
+      "Self-hosted tea tracker for everything tea. Take tasting notes as you progress through each infusion. Import your teas directly from the vendor's website.",
     year: "2026",
     image: "",
-    tags: ["Svelte", "TypeScript", "Tailwind", "DaisyUI"],
-    links: [],
+    tags: [
+      "SvelteKit",
+      "TypeScript",
+      "Tailwind",
+      "DaisyUI",
+      "Java",
+      "Spring",
+      "Docker",
+      "Postgres",
+      "Flyway",
+    ],
+    links: [
+      {
+        url: "https://github.com/PhoenixofForce/Chafynch",
+        icon: "github",
+        label: "Source Code",
+      },
+    ],
     showcase: true,
   },
   {
@@ -197,8 +213,7 @@ export const projects: Project[] = [
   },
   {
     title: "DnD Utils",
-    description:
-      "Want to roll some digital dice? Compare Spell damage? Then this site is for you.",
+    description: "Want to roll some digital dice? Compare Spell damage? Then this site is for you.",
     tags: ["DND", "Svelte", "Web", "Tool"],
     image: "dnd_util",
     year: "2021",
@@ -460,8 +475,7 @@ export const projects: Project[] = [
   },
   {
     title: "Jump and Run",
-    description:
-      "Jump your way through multiple levels to collect all shiny coins.",
+    description: "Jump your way through multiple levels to collect all shiny coins.",
     tags: ["Game", "Java"],
     image: "jump_and_run",
     year: "2017",
@@ -475,8 +489,7 @@ export const projects: Project[] = [
   },
   {
     title: "Tank My Bug",
-    description:
-      "In this buggy Shooter you can shoot your friends on the couch next to you.",
+    description: "In this buggy Shooter you can shoot your friends on the couch next to you.",
     tags: ["GameJam", "Game", "Java"],
     image: "tank_my_bug",
     year: "Kenney 1",
@@ -515,8 +528,7 @@ export const projects: Project[] = [
   },
   {
     title: "My Lamp",
-    description:
-      "Jump across one screen full of enemies while you juggle your lamps fuel.",
+    description: "Jump across one screen full of enemies while you juggle your lamps fuel.",
     tags: ["GameJam", "Game", "Java"],
     image: "my_lamp",
     year: "GMTK 1",
