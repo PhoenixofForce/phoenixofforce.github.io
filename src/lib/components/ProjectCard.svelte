@@ -4,6 +4,7 @@
   import { demoSrc, type Project } from "$lib/projects";
   import { hasReadme } from "$lib/readme";
   import DemoVideo from "./DemoVideo.svelte";
+  import GlyphRain from "./canvansui/GlyphRain.svelte";
 
   interface Props {
     project: Project;
@@ -46,7 +47,7 @@
         class="block w-full h-full object-cover"
       />
     {:else}
-      <div class="w-full h-full bg-base-300"></div>
+      <GlyphRain class="w-full h-full bg-base-200" />
     {/if}
 
     {#if hovered && demo}

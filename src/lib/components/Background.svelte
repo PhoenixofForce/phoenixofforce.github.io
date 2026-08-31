@@ -1,6 +1,6 @@
 <script lang="ts">
   import { onMount } from "svelte";
-  import Grainient from "./backgrounds/Grainient.svelte";
+  import Grainient from "./bits/Grainient.svelte";
 
   type Rgb = [number, number, number];
   type Palette = [string, string, string];

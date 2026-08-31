@@ -1,5 +1,6 @@
 <script lang="ts">
   import { resolve } from "$app/paths";
+  import GooeyNav from "./bits/GooeyNav.svelte";
 
   let mouseX = $state(250);
 
@@ -8,14 +9,6 @@
   }
 
   let { activeLink = 0 }: Props = $props();
-
-  const navBase =
-    "relative py-1 text-sm font-medium tracking-wide transition-colors duration-200 " +
-    "after:absolute after:inset-x-0 after:-bottom-0.5 after:h-[2px] " +
-    "after:bg-primary after:origin-left after:transition-transform after:duration-300";
-  const navActive = "text-primary after:scale-x-100";
-  const navIdle =
-    "text-base-content/55 hover:text-base-content after:scale-x-0 hover:after:scale-x-100";
 </script>
 
 <div
@@ -34,20 +27,13 @@
       </a>
 
       <div class="flex items-center gap-6 sm:gap-8">
-        <a
-          href={resolve("/")}
-          aria-current={activeLink === 0 ? "page" : undefined}
-          class={[navBase, activeLink === 0 ? navActive : navIdle]}
-        >
-          About
-        </a>
-        <a
-          href={resolve("/projects")}
-          aria-current={activeLink === 1 ? "page" : undefined}
-          class={[navBase, activeLink === 1 ? navActive : navIdle]}
-        >
-          Projects
-        </a>
+        <GooeyNav
+          items={[
+            { label: "About", href: "/" },
+            { label: "Projects", href: "/projects" },
+          ]}
+          initialActiveIndex={activeLink}
+        />
       </div>
     </div>
   </nav>
