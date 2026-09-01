@@ -47,7 +47,7 @@
         class="block w-full h-full object-cover"
       />
     {:else}
-      <GlyphRain class="w-full h-full bg-base-200" />
+      <GlyphRain class="w-full h-full" />
     {/if}
 
     {#if hovered && demo}

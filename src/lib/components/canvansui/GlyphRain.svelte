@@ -134,6 +134,7 @@ uniform float uStir;
 uniform float uScroll;
 uniform float uPageLum;
 uniform float uHasContent;
+uniform float seed;
 
 float hash11(float p) {
   p = fract(p * 0.1031);
@@ -196,19 +197,19 @@ void main () {
     if (float(l) >= uLayers) break;
     float cell = uCell * scales[l];
     float col = floor(frag.x / cell);
-    float sp = colSpeed(col, seeds[l]);
-    float off = colOffset(col, seeds[l]);
+    float sp = colSpeed(col, seeds[l] + seed);
+    float off = colOffset(col, seeds[l] + seed);
     vec2 wk = uStir > 0.0 ? wakeAt((col + 0.5) * cell) : vec2(0.0);
     float exc = uStir * wk.y;
     float T = uTime * sp + off + sp * wk.x;
     float phase = fract(yn + T);
     float cyc = floor(yn + T);
-    float gate = step(hash21(vec2(col, cyc) + seeds[l]), uDensity);
+    float gate = step(hash21(vec2(col, cyc) + seeds[l] + seed), uDensity);
     float b = clamp(uTrail / (phase * 22.0), 0.0, 1.3) - 0.04;
     if (b <= 0.0 || gate < 0.5) continue;
     float flick = 1.0 + uFlicker * 0.6 *
-      sin(uTime * 14.0 + hash21(vec2(col, cyc)) * 40.0 + phase * 30.0);
-    float m = glyphMask(frag, cell, seeds[l] + cyc * 0.173);
+      sin(uTime * 14.0 + hash21(vec2(col, cyc) + seed) * 40.0 + phase * 30.0);
+    float m = glyphMask(frag, cell, seeds[l] + seed + cyc * 0.173);
     float cellYn = cell / uResolution.y;
     float head = 1.0 - smoothstep(0.0, cellYn * 1.2, phase);
     g += m * b * flick * weights[l] * (1.0 + head * uGlow * 1.4) *
@@ -256,8 +257,8 @@ void main () {
     float dx = (c + 0.5) * uCell - frag.x;
     float wx = 1.0 - smoothstep(reach * 0.7, reach, abs(dx));
     if (wx <= 0.0) continue;
-    float sp = colSpeed(c, 0.0);
-    float off = colOffset(c, 0.0);
+    float sp = colSpeed(c, seed);
+    float off = colOffset(c, seed);
     vec2 wk = uStir > 0.0 ? wakeAt((c + 0.5) * uCell) : vec2(0.0);
     float lampBoost = 1.0 + uStir * wk.y * 1.4;
     float T = uTime * sp + off + sp * wk.x;
@@ -265,7 +266,7 @@ void main () {
     float k0 = floor(s);
     for (int h = 0; h < 2; h++) {
       float k = k0 + float(h);
-      float gate = step(hash21(vec2(c, k)), uDensity);
+      float gate = step(hash21(vec2(c, k) + seed), uDensity);
       if (gate < 0.5) continue;
       float lamp = 0.6 + 0.4 * hash11(c * 3.97 + k * 0.713);
       float headDocY = (1.0 - (k - T)) * uResolution.y;
@@ -504,7 +505,8 @@ void main () {
       sourceCtx!.clearRect(0, 0, source.width, source.height);
     }
 
-    let time = 7.3;
+    let time = 7.31;
+    const seed = Math.random();
 
     const WAKE_RES = 256;
     const wakeCharge = new Float32Array(WAKE_RES);
@@ -608,6 +610,7 @@ void main () {
       gl!.uniform1f(uniforms.uScroll, content.scrollTop * dpr);
       gl!.uniform1f(uniforms.uPageLum, pageLum);
       gl!.uniform1f(uniforms.uHasContent, htmlInCanvas ? 1 : 0);
+      gl!.uniform1f(uniforms.seed, seed);
       gl!.bindFramebuffer(gl!.FRAMEBUFFER, null);
       gl!.viewport(0, 0, output.width, output.height);
       gl!.drawArrays(gl!.TRIANGLE_STRIP, 0, 4);

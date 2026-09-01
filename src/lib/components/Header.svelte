@@ -12,7 +12,7 @@
 </script>
 
 <div
-  class="header w-full mb-8 border-b border-solid shadow-md"
+  class="header w-full max-w-full mb-8 border-b border-solid shadow-md overflow-hidden"
   style="--x: {mouseX}px"
   onmousemove={(m: MouseEvent) => (mouseX = m.x)}
   role="banner"

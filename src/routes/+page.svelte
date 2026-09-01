@@ -11,7 +11,7 @@
   const showcaseProjects = projects.filter((project) => project.showcase);
 </script>
 
- <Seo
+<Seo
   title="Ole | Software Developer"
   description="Software developer from Germany. Game development, competitive programming, and building things for the web."
 />
